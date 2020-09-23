@@ -16,6 +16,7 @@
   --background-color: #ffffff;
   --text-color: #333333;
   --border-color: #eeeeee;
+  --header-color: #f2f2f2;
 
   --sidebar-color: #f2f2f2;
   --sidebar-text-color: #666666;
@@ -238,7 +239,7 @@ a:hover {
   }
 
   .roam-topbar {
-    border-bottom: 1px solid var(--border-color);
+    background-color: var(--header-color);
   }
 
   #roam-sidebar-logo {
