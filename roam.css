@@ -31,6 +31,24 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap");
 
+body,
+div,
+p,
+textarea {
+  font-family: var(--body-font) !important;
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--header-font) !important;
+  font-weight: bold !important;
+}
+
 @media (min-width: 700px) {
   html {
     font-size: 16px;
@@ -38,14 +56,15 @@
 
   body,
   div,
-  p {
-    font-family: var(--body-font) !important;
+  p,
+  textarea {
     line-height: 1.65;
-    color: var(--text-color);
+    letter-spacing: 0;
   }
 
   p,
-  .roam-block {
+  .roam-block,
+  textarea.rm-block-input {
     font-size: var(--text-size-md);
     line-height: 1.65;
   }
@@ -54,27 +73,32 @@
   h2,
   h3,
   h4,
-  h5 {
-    font-family: var(--header-font) !important;
-    font-weight: bold !important;
+  h5,
+  h6 {
     line-height: 1.15 !important;
   }
 
   h1,
-  .rm-level1 span {
+  .rm-level1 span,
+  h1 textarea {
     margin-top: 0;
     font-size: var(--text-size-4xl) !important;
+    line-height: 1.15 !important;
   }
 
   h2,
   .rm-level2 span,
-  .window-headers .level2 {
+  .window-headers .level2,
+  h2 textarea {
     font-size: var(--text-size-3xl) !important;
+    line-height: 1.15 !important;
   }
 
   h3,
-  .rm-level3 span {
+  .rm-level3 span,
+  h3 textarea {
     font-size: var(--text-size-2xl) !important;
+    line-height: 1.15 !important;
   }
 
   h4,
