@@ -265,8 +265,8 @@ a:hover {
 
   #right-sidebar[style="flex: 1 0 40%;"] > div.flex-h-box {
     position: absolute;
-    left: 8px;
-    top: 0;
+    right: 8px;
+    top: 5px;
   }
 
   /* left sidebar position */
@@ -290,5 +290,10 @@ a:hover {
 
   .sidebar-content > div > div {
     padding: 16px 0;
+  }
+
+  .roam-center,
+  #roam-right-sidebar-content {
+    margin-top: 50px;
   }
 }
