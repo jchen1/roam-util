@@ -204,12 +204,8 @@ strong[style="color: rgb(206, 217, 224);"] {
   font-weight: bold;
 }
 
-.bp3-popover-content div {
+.bp3-tooltip .bp3-popover-content div {
   color: #ffffff;
-}
-
-.bp3-popover-content > .bp3-menu div {
-  color: var(--text-color);
 }
 
 a {
