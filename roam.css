@@ -89,6 +89,7 @@ h6 {
   h2,
   .rm-level2 span,
   .window-headers .level2,
+  .sidebar-content .window-headers > div,
   h2 textarea {
     font-size: var(--text-size-3xl) !important;
     line-height: 1.15 !important;
