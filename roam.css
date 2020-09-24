@@ -28,9 +28,19 @@
   --link-color: #c6262e;
 }
 
-/* typography */
+/******************** TYPOGRAPHY ********************/
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap");
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 700px) {
+  html {
+    font-size: 16px;
+  }
+}
 
 body,
 div,
@@ -50,91 +60,85 @@ h6 {
   font-weight: bold !important;
 }
 
-@media (min-width: 700px) {
-  html {
-    font-size: 16px;
-  }
-
-  body,
-  div,
-  p,
-  textarea {
-    line-height: 1.65;
-    letter-spacing: 0;
-  }
-
-  p,
-  .roam-block,
-  textarea.rm-block-input {
-    font-size: var(--text-size-md);
-    line-height: 1.65;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: 1.15 !important;
-  }
-
-  h1,
-  .rm-level1 span,
-  h1 textarea {
-    margin-top: 0;
-    font-size: var(--text-size-4xl) !important;
-    line-height: 1.15 !important;
-  }
-
-  h2,
-  .rm-level2 span,
-  .window-headers .level2,
-  .sidebar-content .window-headers > div,
-  h2 textarea {
-    font-size: var(--text-size-3xl) !important;
-    line-height: 1.15 !important;
-  }
-
-  h3,
-  .rm-level3 span,
-  h3 textarea {
-    font-size: var(--text-size-2xl) !important;
-    line-height: 1.15 !important;
-  }
-
-  h4,
-  .text-size-h4 {
-    font-size: var(--text-size-xl) !important;
-  }
-
-  h5,
-  .text-size-h5 {
-    font-size: var(--text-size-lg) !important;
-  }
-
-  caption,
-  .text-caption {
-    font-size: var(--text-size-sm) !important;
-  }
-
-  small,
-  .text-small {
-    font-size: var(--text-size-xs) !important;
-  }
-
-  .CodeMirror .CodeMirror-code pre,
-  .CodeMirror-linenumber {
-    font-family: var(--monospace-font) !important;
-  }
-
-  .rm-page-ref,
-  .rm-page-ref-tag {
-    font-weight: bold;
-  }
+.CodeMirror .CodeMirror-code pre,
+.CodeMirror-linenumber {
+  font-family: var(--monospace-font) !important;
 }
 
-/* colors */
+.rm-page-ref,
+.rm-page-ref-tag {
+  font-weight: bold;
+}
+
+body,
+div,
+p,
+textarea {
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+p,
+.roam-block,
+textarea.rm-block-input {
+  font-size: var(--text-size-md);
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.15 !important;
+}
+
+h1,
+.rm-level1 span,
+h1 textarea {
+  margin-top: 0;
+  font-size: var(--text-size-4xl) !important;
+  line-height: 1.15 !important;
+}
+
+h2,
+.rm-level2 span,
+.window-headers .level2,
+.sidebar-content .window-headers > div,
+h2 textarea {
+  font-size: var(--text-size-3xl) !important;
+  line-height: 1.15 !important;
+}
+
+h3,
+.rm-level3 span,
+h3 textarea {
+  font-size: var(--text-size-2xl) !important;
+  line-height: 1.15 !important;
+}
+
+h4,
+.text-size-h4 {
+  font-size: var(--text-size-xl) !important;
+}
+
+h5,
+.text-size-h5 {
+  font-size: var(--text-size-lg) !important;
+}
+
+caption,
+.text-caption {
+  font-size: var(--text-size-sm) !important;
+}
+
+small,
+.text-small {
+  font-size: var(--text-size-xs) !important;
+}
+
+/******************** COLORS ********************/
 
 div#right-sidebar {
   background-color: var(--background-color);
@@ -238,7 +242,11 @@ a:hover {
   border-top: 0;
 }
 
-/* layout */
+/******************** LAYOUT ********************/
+
+#roam-sidebar-logo {
+  display: none;
+}
 
 @media (min-width: 700px) {
   div.roam-center > div {
@@ -253,10 +261,6 @@ a:hover {
 
   .roam-topbar {
     background-color: var(--header-color);
-  }
-
-  #roam-sidebar-logo {
-    display: none;
   }
 
   #right-sidebar[style="flex: 1 0 40%;"] > div.flex-h-box {
