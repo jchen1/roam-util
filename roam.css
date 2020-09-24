@@ -10,7 +10,7 @@
   --text-size-5xl: 2.99rem;
 
   --header-font: "Work Sans", sans-serif;
-  --body-font: "Work Sans", sans-serif;
+  --body-font: "Open Sans", sans-serif;
   --monospace-font: "Source Code Pro", monospace;
 
   --background-color: #ffffff;
@@ -30,6 +30,7 @@
 
 /******************** TYPOGRAPHY ********************/
 
+/* nested @imports don't seem to work properly ... paste this line above the first @import */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap");
 
 html {
@@ -55,7 +56,10 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.rm-level1 *,
+.rm-level2 *,
+.rm-level3 * {
   font-family: var(--header-font) !important;
   font-weight: bold !important;
 }
