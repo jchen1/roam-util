@@ -106,7 +106,7 @@ async function init() {
   return { graph: localStorage.getItem("lastUsedGraph") };
 }
 
-if (!/Mobi|Android/i.test(navigator.userAgent) || true) {
+if (!/Mobi|Android/i.test(navigator.userAgent)) {
   init().then((data) => {
     graph = data.graph;
 
