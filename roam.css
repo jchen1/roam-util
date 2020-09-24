@@ -242,6 +242,15 @@ a:hover {
   border-top: 0;
 }
 
+/* embed container background */
+.rm-embed-container {
+  background-color: var(--background-color);
+}
+
+span[style="color: red;"] {
+  color: var(--link-color) !important;
+}
+
 /******************** LAYOUT ********************/
 
 #roam-sidebar-logo {
@@ -255,7 +264,6 @@ a:hover {
 
   div#right-sidebar[style="flex: 1 0 40%;"] {
     position: relative;
-    padding-left: 42px;
     flex: 1 0 50% !important;
   }
 
@@ -265,8 +273,12 @@ a:hover {
 
   #right-sidebar[style="flex: 1 0 40%;"] > div.flex-h-box {
     position: absolute;
-    right: 8px;
+    left: 8px;
     top: 5px;
+  }
+
+  #roam-right-sidebar-content {
+    padding-left: 42px;
   }
 
   /* left sidebar position */
@@ -292,8 +304,8 @@ a:hover {
     padding: 16px 0;
   }
 
-  .roam-center,
-  #roam-right-sidebar-content {
+  .rm-title-display,
+  #roam-right-sidebar-content > div.sidebar-content > div:first-child {
     margin-top: 50px;
   }
 }
