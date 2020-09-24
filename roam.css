@@ -42,12 +42,6 @@ html {
   font-size: 14px;
 }
 
-@media (min-width: 700px) {
-  html {
-    font-size: 16px;
-  }
-}
-
 body,
 div,
 p,
@@ -83,7 +77,7 @@ body,
 div,
 p,
 textarea {
-  line-height: 1.65;
+  line-height: unset;
   letter-spacing: 0;
 }
 
@@ -95,21 +89,12 @@ textarea.rm-block-input {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.15 !important;
-}
-
-h1,
 .rm-level1 span,
 .sidebar-content h1.level2,
 h1 textarea {
   margin-top: 0;
   font-size: var(--text-size-4xl) !important;
-  line-height: 1.15 !important;
+  line-height: 73px;
 }
 
 h2,
@@ -117,14 +102,20 @@ h2,
 .sidebar-content .window-headers > div,
 h2 textarea {
   font-size: var(--text-size-3xl) !important;
-  line-height: 1.15 !important;
+  line-height: 62px;
 }
 
 h3,
 .rm-level3 span,
 h3 textarea {
   font-size: var(--text-size-2xl) !important;
-  line-height: 1.15 !important;
+  line-height: 53px;
+}
+
+h1 textarea.rm-block-input,
+h2 textarea.rm-block-input,
+h3 textarea.rm-block-input {
+  padding: 8px 0;
 }
 
 h4,
@@ -145,6 +136,12 @@ caption,
 small,
 .text-small {
   font-size: var(--text-size-xs) !important;
+}
+
+@media (min-width: 700px) {
+  html {
+    font-size: 16px;
+  }
 }
 
 /******************** COLORS ********************/
@@ -305,24 +302,30 @@ span[style="color: red;"] {
 
 /* fix bullets & checkbox alignment */
 h1.rm-level1 {
-  margin-top: -0.5625rem !important;
+  margin-top: -1.25rem !important;
 }
 
 h2.rm-level2 {
-  margin-top: -0.5rem !important;
+  margin-top: -1rem !important;
 }
 
 h3.rm-level3 {
-  margin-top: -0.375rem !important;
+  margin-top: -0.75rem !important;
 }
 
-div.rm-block-text {
+div.rm-block-text,
+textarea.rm-block-text {
   margin-top: -0.25rem;
 }
 
 .check-container {
   top: -0.5625rem !important;
   margin-right: 2px;
+}
+
+.checkmark {
+  height: 14px;
+  width: 14px;
 }
 
 @media (min-width: 700px) {
