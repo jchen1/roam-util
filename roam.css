@@ -63,6 +63,10 @@ h6,
   font-weight: bold !important;
 }
 
+.sidebar-content .window-headers > div {
+  font-family: var(--header-font) !important;
+}
+
 .CodeMirror .CodeMirror-code pre,
 .CodeMirror-linenumber {
   font-family: var(--monospace-font) !important;
@@ -136,6 +140,10 @@ caption,
 small,
 .text-small {
   font-size: var(--text-size-xs) !important;
+}
+
+.rm-zoom.zoom-mentions-view {
+  font-size: unset;
 }
 
 @media (min-width: 700px) {
@@ -294,6 +302,10 @@ span[style="color: red;"] {
   border-color: var(--border-color);
 }
 
+.check-container input:checked ~ .checkmark {
+  background-color: var(--tag-background-color);
+}
+
 /******************** LAYOUT ********************/
 
 #roam-sidebar-logo {
@@ -320,12 +332,17 @@ textarea.rm-block-text {
 
 .check-container {
   top: -0.5625rem !important;
-  margin-right: 2px;
+  margin-right: 4px;
 }
 
 .checkmark {
-  height: 14px;
-  width: 14px;
+  height: 1rem;
+  width: 1rem;
+}
+
+.checkmark::after {
+  left: 4.5px;
+  top: 0.5px;
 }
 
 @media (min-width: 700px) {
@@ -382,5 +399,10 @@ textarea.rm-block-text {
 
   .rm-title-display {
     padding-top: 8px;
+  }
+
+  .checkmark::after {
+    left: 5.75px;
+    top: 1.25px;
   }
 }
