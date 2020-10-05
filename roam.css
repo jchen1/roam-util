@@ -340,7 +340,7 @@ textarea.rm-block-text {
   width: 1rem;
 }
 
-.checkmark::after {
+.check-container .checkmark::after {
   left: 4.5px;
   top: 0.5px;
 }
@@ -401,8 +401,8 @@ textarea.rm-block-text {
     padding-top: 8px;
   }
 
-  .checkmark::after {
-    left: 5.75px;
-    top: 1.25px;
+  .check-container .checkmark::after {
+    left: 5px;
+    top: 1.5px;
   }
 }
