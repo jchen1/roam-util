@@ -58,7 +58,8 @@ h5,
 h6,
 .rm-level1 *,
 .rm-level2 *,
-.rm-level3 * {
+.rm-level3 *,
+textarea.rm-title-textarea {
   font-family: var(--header-font) !important;
   font-weight: bold !important;
 }
@@ -95,6 +96,7 @@ textarea.rm-block-input {
 h1,
 .rm-level1 span,
 .sidebar-content h1.level2,
+.rm-title-editing-display textarea,
 h1 textarea {
   margin-top: 0;
   font-size: var(--text-size-4xl) !important;
@@ -103,7 +105,6 @@ h1 textarea {
 
 h2,
 .rm-level2 span,
-.sidebar-content .window-headers > div,
 h2 textarea {
   font-size: var(--text-size-3xl) !important;
   line-height: 62px;
@@ -146,6 +147,17 @@ small,
   font-size: unset;
 }
 
+.sidebar-content .window-headers > div {
+  font-size: var(--text-size-lg) !important;
+}
+
+/* align pin icon with filter icon */
+.sidebar-content
+  div[style*="padding-bottom: 8px"]
+  > div[style*="margin-top: -8px"] {
+  margin-top: 8px !important;
+}
+
 @media (min-width: 700px) {
   html {
     font-size: 16px;
@@ -158,7 +170,8 @@ div#right-sidebar {
   background-color: var(--right-sidebar-background-color);
 }
 
-div.roam-center {
+div.roam-center,
+div.roam-body-main {
   background-color: var(--background-color);
 }
 
@@ -345,6 +358,11 @@ textarea.rm-block-text {
   top: 0.5px;
 }
 
+.rm-sidebar-outline .rm-title-display {
+  padding-top: 0;
+  padding-bottom: 8px;
+}
+
 @media (min-width: 700px) {
   div.roam-center > div {
     padding-right: 0px !important;
@@ -371,7 +389,7 @@ textarea.rm-block-text {
 
   /* left sidebar position */
   div.roam-sidebar-container[style*="top: 0px;"] {
-    top: 45px !important;
+    padding-top: 45px;
   }
 
   /* left sidebar hover size */
@@ -393,11 +411,13 @@ textarea.rm-block-text {
   }
 
   .rm-title-display,
+  textarea.rm-title-textarea,
   #roam-right-sidebar-content > div.sidebar-content > div:first-child {
     margin-top: 50px;
   }
 
-  .rm-title-display {
+  .rm-title-display,
+  textarea.rm-title-textarea {
     padding-top: 8px;
   }
 
