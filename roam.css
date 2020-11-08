@@ -363,6 +363,10 @@ textarea.rm-block-text {
   padding-bottom: 8px;
 }
 
+#roam-mobile-bar {
+  position: fixed !important;
+}
+
 @media (min-width: 700px) {
   div.roam-center > div {
     padding-right: 0px !important;
