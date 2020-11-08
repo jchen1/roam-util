@@ -364,8 +364,11 @@ textarea.rm-block-text {
 }
 
 #rm-mobile-bar {
-  position: fixed !important;
   z-index: 6;
+}
+
+.roam-body-main {
+  position: relative;
 }
 
 @media (min-width: 700px) {
