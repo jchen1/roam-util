@@ -443,3 +443,14 @@ textarea.rm-block-text {
     top: 1.5px;
   }
 }
+
+/******************** roam/42 ********************/
+.jsPanel-hdr,
+#jsPanelDNP-min {
+  border-radius: 5px;
+}
+
+.jsPanel-headerbar {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
