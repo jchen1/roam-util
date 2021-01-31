@@ -384,7 +384,7 @@ textarea.rm-block-text {
     flex: 1 0 50% !important;
   }
 
-  .roam-topbar {
+  .rm-topbar {
     background-color: var(--header-color);
   }
 
