@@ -318,6 +318,14 @@ span[style="color: red;"] {
   border-color: var(--border-color);
 }
 
+.rm-multibar {
+  border-color: var(--border-color);
+}
+
+.rm-multibar:hover {
+  border-color: var(--border-color);
+}
+
 .check-container input:checked ~ .checkmark {
   background-color: var(--tag-background-color);
 }
