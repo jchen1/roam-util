@@ -1,13 +1,10 @@
 :root {
   --text-size-xs: 0.69rem;
-  --text-size-sm: 0.83rem;
+  --text-size-sm: 1rem;
   --text-size-md: 1rem;
-  --text-size-lg: 1.2rem;
-  --text-size-xl: 1.44rem;
-  --text-size-2xl: 1.73rem;
-  --text-size-3xl: 2.07rem;
-  --text-size-4xl: 2.49rem;
-  --text-size-5xl: 2.99rem;
+  --text-size-2xl: 1.7rem;
+  --text-size-3xl: 2.2rem;
+  --text-size-4xl: 3.2rem;
 
   --header-font: "Work Sans", sans-serif;
   --body-font: "Open Sans", sans-serif;
@@ -28,6 +25,9 @@
   --tag-background-color: #3689e6;
   --tag-color: #ffffff;
 
+  --tag-hover-color: rgb(242, 178, 48);
+  --tag-background-hover-color: rgba(0, 0, 0, 0);
+
   --link-color: #c6262e;
 
   --right-sidebar-border-size: 1px;
@@ -40,6 +40,12 @@
 
 html {
   font-size: 14px;
+}
+
+@media (min-width: 700px) {
+  html {
+    font-size: 16px;
+  }
 }
 
 body,
@@ -64,16 +70,16 @@ h6,
 .rm-heading-level-3 > .rm-block__self .rm-block__input,
 textarea.rm-title-textarea {
   font-family: var(--header-font) !important;
-  font-weight: bold !important;
 }
 
 .sidebar-content .window-headers > div {
-  font-family: var(--header-font) !important;
+  /* font-family: var(--header-font) !important; */
 }
 
 .CodeMirror .CodeMirror-code pre,
 .CodeMirror-linenumber {
   font-family: var(--monospace-font) !important;
+  font-size: var(--text-size-sm);
 }
 
 .rm-page-ref,
@@ -111,6 +117,7 @@ h2,
 .rm-heading-level-2 > .rm-block__self .rm-block__input,
 h2 textarea {
   font-size: var(--text-size-3xl) !important;
+  font-style: italic;
 }
 
 h3,
@@ -118,22 +125,13 @@ h3,
 .rm-heading-level-3 > .rm-block__self .rm-block__input,
 h3 textarea {
   font-size: var(--text-size-2xl) !important;
+  font-style: italic;
 }
 
 h1 textarea.rm-block-input,
 h2 textarea.rm-block-input,
 h3 textarea.rm-block-input {
   padding: 8px 0;
-}
-
-h4,
-.text-size-h4 {
-  font-size: var(--text-size-xl) !important;
-}
-
-h5,
-.text-size-h5 {
-  font-size: var(--text-size-lg) !important;
 }
 
 caption,
@@ -151,7 +149,7 @@ small,
 }
 
 .sidebar-content .window-headers > div {
-  font-size: var(--text-size-lg) !important;
+  font-size: var(--text-size-md) !important;
 }
 
 /* align pin icon with filter icon */
@@ -161,10 +159,32 @@ small,
   margin-top: 8px !important;
 }
 
-@media (min-width: 700px) {
-  html {
-    font-size: 16px;
-  }
+/* hide brackets */
+.rm-page-ref__brackets {
+  display: none;
+}
+
+/******************** TABLES ********************/
+
+.roam-table th,
+.roam-table td,
+.roam-table tr {
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.roam-table table > *:first-child > tr:first-of-type,
+.roam-table table.dont-focus-block tr:nth-of-type(2) {
+  border-top: 2px solid var(--text-color);
+  border-bottom: 0;
+}
+
+.roam-table table tbody > tr:last-of-type {
+  border-bottom: 2px solid var(--text-color);
+}
+
+.roam-table span[style*="background-color: rgb(14, 90, 138);"] {
+  background-color: unset !important;
 }
 
 /******************** COLORS ********************/
@@ -198,8 +218,13 @@ div#right-sidebar[style="flex: 1 0 40%;"] {
 .rm-page-ref {
   color: var(--tag-color) !important;
   background-color: var(--tag-background-color);
-  padding: 1px 6px;
-  border-radius: 4px;
+  transition: color, background 0.35s ease-in-out 0s;
+}
+
+.rm-page-ref-tag:hover,
+.rm-page-ref:hover {
+  color: var(--tag-hover-color) !important;
+  background-color: var(--tag-background-hover-color) !important;
 }
 
 div[style="color: rgb(206, 217, 224);"],
@@ -266,8 +291,8 @@ div.starred-pages-wrapper > div:first-child {
 
 /* header colors */
 div.roam-sidebar-container span.bp3-icon-menu-closed::before,
-.roam-topbar .bp3-button[class*="bp3-icon-"]::before,
-.roam-topbar .bp3-button .bp3-icon {
+.rm-topbar .bp3-button[class*="bp3-icon-"]::before,
+.rm-topbar .bp3-button .bp3-icon {
   color: var(--header-text-color);
 }
 
@@ -284,9 +309,17 @@ a:hover {
   color: var(--link-color);
 }
 
+.rm-ref-page-view-title > a {
+  color: var(--tag-color);
+  background-color: var(--tag-background-color);
+  font-size: var(--text-size-md);
+}
+
 .rm-query .rm-query-title {
   background-color: var(--sidebar-color);
   color: var(--sidebar-text-color);
+  font-family: var(--monospace-font) !important;
+  font-size: var(--text-size-sm);
 }
 
 .sidebar-content > div > div {
@@ -327,7 +360,7 @@ span[style="color: red;"] {
 }
 
 .check-container input:checked ~ .checkmark {
-  background-color: var(--tag-background-color);
+  background-color: var(--tag-color);
 }
 
 /******************** LAYOUT ********************/
