@@ -199,6 +199,10 @@ div#right-sidebar {
   border-left: var(--right-sidebar-border-size) solid var(--border-color);
 }
 
+.roam-sidebar-container {
+  border-right: var(--right-sidebar-border-size) solid var(--border-color);
+}
+
 #right-sidebar .level2 > a {
   color: var(--text-color);
 }
