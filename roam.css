@@ -187,6 +187,7 @@ small,
 
 div#right-sidebar {
   background-color: var(--right-sidebar-background-color);
+  padding-top: 45px;
 }
 
 div.roam-center,
@@ -214,6 +215,8 @@ div#right-sidebar {
 .rm-page-ref {
   color: var(--tag-color) !important;
   background-color: var(--tag-background-color);
+  padding: 2px 4px;
+  border-radius: 5px;
   transition: color, background 0.35s ease-in-out 0s;
 }
 
@@ -221,6 +224,7 @@ div#right-sidebar {
 .rm-page-ref:hover {
   color: var(--tag-hover-color) !important;
   background-color: var(--tag-background-hover-color) !important;
+  text-decoration: none;
 }
 
 div[style="color: rgb(206, 217, 224);"],
@@ -303,6 +307,7 @@ a {
 
 a:hover {
   color: var(--link-color);
+  text-decoration: underline;
 }
 
 .rm-ref-page-view-title > a {
@@ -312,8 +317,8 @@ a:hover {
 }
 
 .rm-query .rm-query-title {
-  background-color: var(--sidebar-color);
-  color: var(--sidebar-text-color);
+  background-color: var(--header-color);
+  color: var(--header-text-color);
   font-family: var(--monospace-font) !important;
   font-size: var(--text-size-sm);
 }
@@ -359,6 +364,25 @@ span[style="color: red;"] {
   background-color: var(--tag-color);
 }
 
+.intercom-lightweight-app {
+  display: none;
+}
+
+/******************** CodeMirror ********************/
+
+.CodeMirror {
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+}
+
+.CodeMirror-gutters {
+  background-color: var(--header-color);
+}
+
+.CodeMirror-linenumber {
+  color: var(--tag-color);
+}
+
 /******************** LAYOUT ********************/
 
 #roam-sidebar-logo {
@@ -366,6 +390,10 @@ span[style="color: red;"] {
 }
 
 /* fix bullets & checkbox alignment */
+.rm-block > .rm-block__self > .controls {
+  margin-top: 2px;
+}
+
 .rm-heading-level-1 > .rm-block__self > .controls {
   margin-top: 24px;
 }
@@ -411,24 +439,18 @@ textarea.rm-block-text {
   position: relative;
 }
 
+.rm-topbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+  background-color: var(--header-color);
+}
+
 @media (min-width: 700px) {
   div.roam-center > div {
     padding-right: 0px !important;
-  }
-
-  div#right-sidebar[style="flex: 1 0 40%;"] {
-    position: relative;
-    flex: 1 0 50% !important;
-  }
-
-  .rm-topbar {
-    background-color: var(--header-color);
-  }
-
-  #right-sidebar[style="flex: 1 0 40%;"] > div.flex-h-box {
-    position: absolute;
-    left: 8px;
-    top: 5px;
   }
 
   #roam-right-sidebar-content {
@@ -449,9 +471,9 @@ textarea.rm-block-text {
   /* left sidebar open - close button */
   div.roam-sidebar-container[style*="top: 0px;"] span.bp3-icon-menu-closed {
     opacity: 1 !important;
-    position: fixed;
+    /* position: fixed;
     top: 8px;
-    left: 16px;
+    left: 16px; */
   }
 
   .sidebar-content > div > div {
