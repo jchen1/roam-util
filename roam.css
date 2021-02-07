@@ -95,6 +95,11 @@ textarea.rm-block-input {
   line-height: 1.65;
 }
 
+/* fix bullet alignment */
+.rm-block > .rm-block__self > .controls {
+  margin-top: 2px;
+}
+
 h1,
 .rm-level1 span,
 .sidebar-content h1.level2,
@@ -103,6 +108,21 @@ h1,
 h1 textarea {
   margin-top: 0;
   font-size: var(--text-size-4xl) !important;
+  line-height: 1.25;
+}
+
+.rm-heading-level-1 > .rm-block__self .rm-block__input {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.rm-heading-level-1 > rm-block__self textarea.rm-block__input {
+  margin-bottom: 1.7rem;
+  padding: 6px 0;
+}
+
+.rm-heading-level-1 > .rm-block__self > .controls {
+  margin-top: calc(2rem + 24px);
 }
 
 h2,
@@ -111,20 +131,38 @@ h2,
 h2 textarea {
   font-size: var(--text-size-3xl) !important;
   font-style: italic;
+  line-height: 1.25;
+  margin-top: 2.1rem;
+  margin-bottom: 1.4rem;
+}
+
+.rm-heading-level-2 > .rm-block__self textarea.rm-block__input {
+  margin-bottom: 1.6rem;
+  padding: 4px 0;
+}
+
+.rm-heading-level-2 > .rm-block__self > .controls {
+  margin-top: calc(2rem + 16px);
 }
 
 h3,
 .rm-level3 span,
-.rm-heading-level-3 > .rm-block__self .rm-block__input,
-h3 textarea {
+.rm-heading-level-3 > .rm-block__self .rm-block__input {
   font-size: var(--text-size-2xl) !important;
+  color: var(--text-color);
   font-style: italic;
+  line-height: 1.25;
+  margin-top: 2rem;
+  margin-bottom: 1.4rem;
 }
 
-h1 textarea.rm-block-input,
-h2 textarea.rm-block-input,
-h3 textarea.rm-block-input {
-  padding: 8px 0;
+.rm-heading-level-3 > .rm-block__self textarea.rm-block__input {
+  margin-bottom: 1.8rem;
+  padding: 5px 0 4px;
+}
+
+.rm-heading-level-3 > .rm-block__self > .controls {
+  margin-top: calc(2rem + 12px);
 }
 
 caption,
@@ -165,23 +203,6 @@ a {
 a:hover {
   color: var(--link-color);
   text-decoration: underline;
-}
-
-/* fix bullet alignment */
-.rm-block > .rm-block__self > .controls {
-  margin-top: 2px;
-}
-
-.rm-heading-level-1 > .rm-block__self > .controls {
-  margin-top: 24px;
-}
-
-.rm-heading-level-2 > .rm-block__self > .controls {
-  margin-top: 16px;
-}
-
-.rm-heading-level-3 > .rm-block__self > .controls {
-  margin-top: 12px;
 }
 
 /* textarea alignment */
@@ -387,9 +408,23 @@ div.roam-sidebar-container span.bp3-icon-menu-closed::before,
   color: var(--header-text-color);
 }
 
-.bp3-tooltip .bp3-popover-content div {
-  color: #ffffff;
+#find-or-create-input {
+  background-color: var(--background-color);
 }
+
+.rm-find-or-create-wrapper .bp3-popover .bp3-menu {
+  background-color: var(--background-color);
+}
+
+/* selected "find or create" */
+.rm-find-or-create-wrapper
+  .bp3-popover
+  .bp3-menu
+  div[style*="background-color"] {
+  background-color: var(--header-color) !important;
+}
+
+/******************** misc ********************/
 
 .rm-ref-page-view-title > a {
   color: var(--tag-color);
@@ -488,6 +523,21 @@ span[style="color: red;"] {
   background-color: var(--header-color);
 }
 
+/******************** popover ********************/
+
+.bp3-tooltip .bp3-popover-arrow-fill {
+  fill: var(--background-color);
+}
+
+.bp3-tooltip .bp3-popover-content {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.bp3-tooltip .bp3-popover-content a {
+  color: var(--text-color);
+}
+
 /******************** desktop styles ********************/
 
 @media (min-width: 700px) {
@@ -511,9 +561,12 @@ span[style="color: red;"] {
 
   /* textarea alignment */
   .rm-title-display,
-  .roam-body-main .rm-title-editing-display,
-  #roam-right-sidebar-content > div.sidebar-content > div:first-child {
+  .roam-body-main .rm-title-editing-display {
     margin-top: 50px;
+  }
+
+  .roam-article .roam-log-page:not(:first-child) .rm-title-display {
+    margin-top: 0;
   }
 
   #right-sidebar .rm-sidebar-outline .rm-title-editing-display {
@@ -532,7 +585,17 @@ span[style="color: red;"] {
   }
 }
 
+/******************** help popup ********************/
+.rm-help-popup {
+  z-index: 9999;
+}
+.rm-help-popup .rm-help-popup__drag-handle {
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+}
+
 /******************** roam/42 ********************/
+
 .jsPanel-hdr,
 #jsPanelDNP-min {
   border-radius: 5px;
@@ -541,4 +604,9 @@ span[style="color: red;"] {
 .jsPanel-headerbar {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+div[data-tippy-root] {
+  /* z-index: 99999 !important; */
+  background-color: var(--background-color);
 }
