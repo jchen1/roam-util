@@ -35,9 +35,6 @@
 
 /******************** TYPOGRAPHY ********************/
 
-/* nested @imports don't seem to work properly ... paste this line above the first @import */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap");
-
 html {
   font-size: 14px;
 }
@@ -160,6 +157,55 @@ small,
   display: none;
 }
 
+a {
+  color: var(--link-color);
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+/* fix bullet alignment */
+.rm-block > .rm-block__self > .controls {
+  margin-top: 2px;
+}
+
+.rm-heading-level-1 > .rm-block__self > .controls {
+  margin-top: 24px;
+}
+
+.rm-heading-level-2 > .rm-block__self > .controls {
+  margin-top: 16px;
+}
+
+.rm-heading-level-3 > .rm-block__self > .controls {
+  margin-top: 12px;
+}
+
+/* textarea alignment */
+div.rm-block-text,
+textarea.rm-block-text {
+  margin-top: -0.25rem;
+}
+
+/* checkbox alignment */
+.check-container {
+  top: -0.1rem !important;
+  margin-right: 4px;
+}
+
+.checkmark {
+  height: 1rem;
+  width: 1rem;
+}
+
+.check-container .checkmark::after {
+  left: 4.5px;
+  top: 0.5px;
+}
+
 /******************** TABLES ********************/
 
 .roam-table th,
@@ -215,6 +261,11 @@ div#right-sidebar {
   background-color: var(--right-sidebar-background-color);
 }
 
+#right-sidebar .bp3-button:before,
+#right-sidebar .bp3-button .bp3-icon {
+  color: var(--sidebar-text-color);
+}
+
 .rm-page-ref-tag,
 .rm-page-ref {
   color: var(--tag-color) !important;
@@ -234,6 +285,13 @@ div#right-sidebar {
 div[style="color: rgb(206, 217, 224);"],
 strong[style="color: rgb(206, 217, 224);"] {
   color: var(--text-color) !important;
+}
+
+/******************** SIDEBAR ********************/
+
+/* hide sidebar logo */
+#roam-sidebar-logo {
+  display: none;
 }
 
 /* sidebar color */
@@ -261,13 +319,27 @@ strong[style="color: rgb(206, 217, 224);"] {
   color: var(--sidebar-text-color);
 }
 
-/* sidebar divider color */
-div.starred-pages-wrapper > div:first-child {
-  background-color: var(--sidebar-text-color) !important;
+/* sidebar: starred pages text weight */
+.roam-body
+  .roam-app
+  .roam-sidebar-container
+  .roam-sidebar-content
+  .starred-pages-wrapper
+  .starred-pages
+  .page,
+.roam-body
+  .roam-app
+  .roam-sidebar-container
+  .roam-sidebar-content
+  .starred-pages-wrapper
+  .starred-pages
+  .page:hover {
+  font-weight: normal;
 }
 
-.log-button > div {
-  color: inherit;
+/* sidebar divider color */
+div.starred-pages-wrapper > div:first-child {
+  background-color: var(--border-color) !important;
 }
 
 /* sidebar hover color */
@@ -290,7 +362,22 @@ div.starred-pages-wrapper > div:first-child {
   .top-row:hover {
   background-color: unset;
   color: var(--sidebar-text-hover-color) !important;
-  font-weight: bold;
+}
+
+/* left sidebar position */
+div.roam-sidebar-container[style*="top: 0px;"] {
+  padding-top: 45px;
+}
+
+/* left sidebar open - close button */
+div.roam-sidebar-container[style*="top: 0px;"] span.bp3-icon-menu-closed {
+  opacity: 1 !important;
+}
+
+/******************** HEADER ********************/
+
+.log-button > div {
+  color: inherit;
 }
 
 /* header colors */
@@ -302,16 +389,6 @@ div.roam-sidebar-container span.bp3-icon-menu-closed::before,
 
 .bp3-tooltip .bp3-popover-content div {
   color: #ffffff;
-}
-
-a {
-  color: var(--link-color);
-  font-weight: bold;
-}
-
-a:hover {
-  color: var(--link-color);
-  text-decoration: underline;
 }
 
 .rm-ref-page-view-title > a {
@@ -389,47 +466,6 @@ span[style="color: red;"] {
 
 /******************** LAYOUT ********************/
 
-#roam-sidebar-logo {
-  display: none;
-}
-
-/* fix bullets & checkbox alignment */
-.rm-block > .rm-block__self > .controls {
-  margin-top: 2px;
-}
-
-.rm-heading-level-1 > .rm-block__self > .controls {
-  margin-top: 24px;
-}
-
-.rm-heading-level-2 > .rm-block__self > .controls {
-  margin-top: 16px;
-}
-
-.rm-heading-level-3 > .rm-block__self > .controls {
-  margin-top: 12px;
-}
-
-div.rm-block-text,
-textarea.rm-block-text {
-  margin-top: -0.25rem;
-}
-
-.check-container {
-  top: -0.1rem !important;
-  margin-right: 4px;
-}
-
-.checkmark {
-  height: 1rem;
-  width: 1rem;
-}
-
-.check-container .checkmark::after {
-  left: 4.5px;
-  top: 0.5px;
-}
-
 .rm-sidebar-outline .rm-title-display {
   padding-top: 0;
   padding-bottom: 8px;
@@ -452,6 +488,8 @@ textarea.rm-block-text {
   background-color: var(--header-color);
 }
 
+/******************** desktop styles ********************/
+
 @media (min-width: 700px) {
   div.roam-center > div {
     padding-right: 0px !important;
@@ -461,23 +499,10 @@ textarea.rm-block-text {
     padding-left: 42px;
   }
 
-  /* left sidebar position */
-  div.roam-sidebar-container[style*="top: 0px;"] {
-    padding-top: 45px;
-  }
-
   /* left sidebar hover size */
   div.roam-sidebar-container[style*="box-shadow"] {
     bottom: 0px !important;
     box-shadow: unset !important;
-  }
-
-  /* left sidebar open - close button */
-  div.roam-sidebar-container[style*="top: 0px;"] span.bp3-icon-menu-closed {
-    opacity: 1 !important;
-    /* position: fixed;
-    top: 8px;
-    left: 16px; */
   }
 
   .sidebar-content > div > div {
