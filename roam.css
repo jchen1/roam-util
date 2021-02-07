@@ -72,10 +72,6 @@ textarea.rm-title-textarea {
   font-family: var(--header-font) !important;
 }
 
-.sidebar-content .window-headers > div {
-  /* font-family: var(--header-font) !important; */
-}
-
 .CodeMirror .CodeMirror-code pre,
 .CodeMirror-linenumber {
   font-family: var(--monospace-font) !important;
@@ -198,7 +194,7 @@ div.roam-body-main {
   background-color: var(--background-color);
 }
 
-div#right-sidebar[style="flex: 1 0 40%;"] {
+div#right-sidebar {
   border-left: var(--right-sidebar-border-size) solid var(--border-color);
 }
 
