@@ -426,10 +426,13 @@ div.roam-sidebar-container span.bp3-icon-menu-closed::before,
 
 /******************** misc ********************/
 
+/* references */
 .rm-ref-page-view-title > a {
   color: var(--tag-color);
   background-color: var(--tag-background-color);
   font-size: var(--text-size-md);
+  padding: 2px 4px;
+  border-radius: 5px;
 }
 
 .rm-query .rm-query-title {
@@ -497,6 +500,12 @@ span[style="color: red;"] {
 
 .CodeMirror-linenumber {
   color: var(--tag-color);
+}
+
+code {
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+  padding: 0.2em 0.3em;
 }
 
 /******************** LAYOUT ********************/
