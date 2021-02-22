@@ -195,14 +195,14 @@ small,
   display: none;
 }
 
+/* links */
 a {
   color: var(--link-color);
-  font-weight: bold;
+  text-decoration: underline;
 }
 
 a:hover {
   color: var(--link-color);
-  text-decoration: underline;
 }
 
 /* textarea alignment */
@@ -288,7 +288,8 @@ div#right-sidebar {
 }
 
 .rm-page-ref-tag,
-.rm-page-ref {
+.rm-page-ref,
+.rm-ref-page-view-title > a {
   color: var(--tag-color) !important;
   background-color: var(--tag-background-color);
   padding: 2px 4px;
@@ -297,7 +298,8 @@ div#right-sidebar {
 }
 
 .rm-page-ref-tag:hover,
-.rm-page-ref:hover {
+.rm-page-ref:hover,
+.rm-ref-page-view-title > a:hover {
   color: var(--tag-hover-color) !important;
   background-color: var(--tag-background-hover-color) !important;
   text-decoration: none;
@@ -424,15 +426,41 @@ div.roam-sidebar-container span.bp3-icon-menu-closed::before,
   background-color: var(--header-color) !important;
 }
 
+/* bullet colors */
+.rm-bullet.rm-bullet--closed .rm-bullet__inner,
+.sidebar-content .rm-bullet.rm-bullet--closed .rm-bullet__inner {
+  /* border-color: var(--tag-background-color); */
+  /* background-color: var(--text-color); */
+  background-color: var(--background-color);
+  border-color: var(--text-color);
+}
+
+/* autocomplete wrapper */
+.rm-autocomplete__wrapper > div.bp3-elevation-3 {
+  background-color: var(--background-color) !important;
+}
+
+.rm-autocomplete__wrapper
+  > div.bp3-elevation-3
+  > div[style*="background-color"] {
+  background-color: var(--tag-background-color) !important;
+}
+
+.rm-autocomplete__wrapper .bp3-text-overflow-ellipsis {
+  font-weight: bold;
+}
+
 /******************** misc ********************/
 
 /* references */
 .rm-ref-page-view-title > a {
-  color: var(--tag-color);
-  background-color: var(--tag-background-color);
   font-size: var(--text-size-md);
-  padding: 2px 4px;
-  border-radius: 5px;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+.rm-ref-page-view-title > a > span.rm-page__title:hover {
+  text-decoration: none !important;
 }
 
 .rm-query .rm-query-title {
