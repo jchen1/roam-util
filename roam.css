@@ -13,6 +13,7 @@
   --background-color: #ffffff;
   --right-sidebar-background-color: #ffffff;
   --text-color: #333333;
+  --text-placeholder-color: #666;
   --border-color: #dddddd;
 
   --header-color: #f2f2f2;
@@ -306,13 +307,44 @@ div#right-sidebar {
   text-decoration: none;
 }
 
-.rm-zoom-item span.rm-page-ref {
+.rm-reference-container .rm-zoom-item span.rm-page-ref {
   display: inline-block;
 }
 
 div[style="color: rgb(206, 217, 224);"],
-strong[style="color: rgb(206, 217, 224);"] {
-  color: var(--text-color) !important;
+strong[style="color: rgb(206, 217, 224);"],
+span[style="color: rgb(206, 217, 224);"] {
+  color: var(--text-placeholder-color) !important;
+}
+
+.rm-block--ghost span {
+  font-style: italic;
+}
+
+/* blueprint menu */
+.bp3-popover-content,
+.bp3-select-popover .bp3-menu {
+  background-color: var(--background-color);
+}
+
+.bp3-menu-item:hover,
+.bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-menu-item {
+  background-color: var(--tag-background-color);
+}
+
+/* blueprint button hover */
+.bp3-button.bp3-minimal:hover {
+  background-color: var(--tag-background-color);
+}
+
+/* quick capture colors */
+.rm-quick-capture-sync-modal {
+  background-color: var(--background-color);
+}
+
+.rm-quick-capture-sync-modal .bp3-button.bp3-intent-primary {
+  background-color: var(--tag-background-color);
+  color: black;
 }
 
 /******************** SIDEBAR ********************/
@@ -572,6 +604,7 @@ code {
 
 #rm-mobile-bar {
   z-index: 6;
+  background-color: var(--tag-background-color);
 }
 
 .roam-body-main {
