@@ -287,6 +287,7 @@ div#right-sidebar {
   color: var(--sidebar-text-color);
 }
 
+/* tags */
 .rm-page-ref-tag,
 .rm-page-ref,
 .rm-ref-page-view-title > a {
@@ -303,6 +304,10 @@ div#right-sidebar {
   color: var(--tag-hover-color) !important;
   background-color: var(--tag-background-hover-color) !important;
   text-decoration: none;
+}
+
+.rm-zoom-item span.rm-page-ref {
+  display: inline-block;
 }
 
 div[style="color: rgb(206, 217, 224);"],
@@ -513,6 +518,28 @@ span[style="color: red;"] {
 
 .intercom-lightweight-app {
   display: none;
+}
+
+/* code: language selector */
+.rm-block__input.hoverparent div[style*="opacity"] {
+  opacity: 1 !important;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+}
+
+/* date picker */
+.bp3-datepicker {
+  background-color: var(--background-color);
+}
+
+.bp3-overlay-open .bp3-popover-arrow svg > path.bp3-popover-arrow-fill {
+  fill: var(--background-color);
+}
+
+.bp3-datepicker .DayPicker-Day:hover,
+.bp3-datepicker .DayPicker-Day:focus {
+  background-color: var(--tag-background-color);
+  color: var(--text-color);
 }
 
 /******************** CodeMirror ********************/
