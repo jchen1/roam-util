@@ -68,6 +68,7 @@ h6,
 .rm-heading-level-3 > .rm-block__self .rm-block__input,
 textarea.rm-title-textarea {
   font-family: var(--header-font) !important;
+  font-style: italic;
 }
 
 .CodeMirror .CodeMirror-code pre,
@@ -573,6 +574,11 @@ span[style="color: red;"] {
 .bp3-datepicker .DayPicker-Day:focus {
   background-color: var(--tag-background-color);
   color: var(--text-color);
+}
+
+/* settings */
+.bp3-dialog[style*="background-color: white;"] {
+  background-color: var(--background-color) !important;
 }
 
 /******************** CodeMirror ********************/
