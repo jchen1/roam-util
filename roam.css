@@ -325,8 +325,13 @@ span[style="color: rgb(206, 217, 224);"],
 
 /* blueprint menu */
 .bp3-popover-content,
+.bp3-popover .bp3-menu,
 .bp3-select-popover .bp3-menu {
   background-color: var(--background-color);
+}
+
+.bp3-menu button[style*="background-color: rgba(72, 176, 240, 0.5);"] {
+  background-color: var(--tag-background-color) !important;
 }
 
 .bp3-menu-item:hover,
